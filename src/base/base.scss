@@ -1,0 +1,16 @@
+// base.css
+// common theme for all pages
+
+// Your variable overrides
+// https://getbootstrap.com/docs/4.1/getting-started/theming/
+
+$body-bg: #eee;
+$body-color: #111;
+
+$theme-colors: (
+    "primary": #5627d8,
+    // "primary": black,
+    "danger": #ff4136
+);
+
+@import "./node_modules/bootstrap/scss/bootstrap";
