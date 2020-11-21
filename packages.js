@@ -15,9 +15,9 @@ module.exports = [
     target: 'node'
 },
 
-// common library
+// common base library
 {
-    name: 'index',
+    name: 'base',
     entry: [
         './src/base/base.js',
         './src/base/base.scss',
@@ -26,24 +26,15 @@ module.exports = [
     performance: { hints: false } // > max-recommended, will be cached anyway
 },
 
-// first page
+// pages
 {
-    name: 'index',
-    entry: [
-        './src/index/index.js',
-        './src/index/index.html',
-    ],
-    output: { path: public, filename:'index.js' },
-},
-
-// a sample application
-{
-    name: 'foo',
-    entry: [
-        './src/foo/foo.js',
-        './src/foo/foo.html',
-    ],
-    output: { path:public, filename:'foo.js' },
-},
-
+    name: 'pages',
+    entry: {
+        index: [ './src/index/index.js', './src/index/index.html'],
+        foo: [ './src/foo/foo.js', './src/foo/foo.html']
+    },
+    output: {
+        path: public, filename:'[name].js'
+    }
+}
 ].filter(Boolean)
